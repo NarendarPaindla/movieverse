@@ -31,7 +31,7 @@ function displayMovies(movies){
     movies.forEach(movie=>{
       moviesContainer.innerHTML+=
       `
-      <div class="movie-card">
+      <div class="movie-card" onclick="openMovie('${movie.imdbID}')">
       <img src="${movie.Poster}"/>
       <h3>${movie.Title}</h3>
       <p>${movie.Year}</p>
@@ -47,3 +47,7 @@ if(event.key==="Enter"){
 }
 })
 
+
+function openMovie(id){
+    window.location.href=`pages/movie.html?id=${id}`;
+}

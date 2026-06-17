@@ -97,3 +97,33 @@ button{
 } */
 
 .loader{ display:none; text-align:center; font-size:22px; padding:30px; }
+
+.details-container{
+
+display:flex;
+
+gap:30px;
+
+padding:40px;
+
+align-items:flex-start;
+}
+
+.details-container img{
+
+width:300px;
+
+border-radius:10px;
+}
+
+.details-container h1{
+
+margin-bottom:15px;
+}
+
+.details-container p{
+
+margin-bottom:10px;
+
+line-height:1.6;
+}
