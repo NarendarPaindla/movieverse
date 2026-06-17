@@ -1,5 +1,6 @@
 const API_KEY = "26b9ad21";
 
+let currentMovie = null;
 const params =
 new URLSearchParams(
 window.location.search
@@ -24,6 +25,7 @@ displayMovie(data);
 getMovieDetails();
 
 function displayMovie(movie){
+  currentMovie = movie;
 
 document.getElementById(
 "movieDetails"
@@ -36,7 +38,12 @@ src="${movie.Poster}">
 <div>
 
 <h1>${movie.Title}</h1>
+<button
+onclick="saveFavorite()">
 
+Add To Favorites
+
+</button>
 <p>
 Year:
 ${movie.Year}
@@ -67,3 +74,24 @@ ${movie.Plot}
 `;
 
 }
+
+function saveFavorite(){
+
+let favorites =JSON.parse(localStorage.getItem("favorites")) || [];
+
+favorites.push(currentMovie);
+
+localStorage.setItem(
+
+"favorites",
+
+JSON.stringify(favorites)
+
+);
+
+alert(
+"Added to Favorites"
+);
+
+}
+
