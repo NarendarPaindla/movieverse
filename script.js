@@ -8,6 +8,11 @@ async function searchMovies(movieName){
     const response=await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`);
     console.log(response);
     const data=await response.json();
+   if (data.Response === "False"){
+    moviesContainer.innerHTML="<h2>No Movies Found</h2>";
+    return;
+   }
+
     displayMovies(data.Search);
 }
 
