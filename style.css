@@ -1,0 +1,36 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#111;
+    color:white;
+    min-height:100vh;
+
+}
+header{
+    padding:20px;
+    text-align:center;
+}
+h1{
+    margin-bottom:20px;
+}
+.search-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+input{
+    width:300px;
+    padding:10px;
+    border:none;
+    outline:none;
+}
+
+button{
+    cursor:pointer;
+    padding:10px 20px;
+}
