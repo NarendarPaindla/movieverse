@@ -8,7 +8,24 @@ async function searchMovies(movieName){
     const response=await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`);
     console.log(response);
     const data=await response.json();
-    console.log(data);
+    displayMovies(data.Search);
 }
 
-searchMovies("Pushpa");
+searchBtn.addEventListener("click",()=>{
+     const movie=searchInput.value;
+     searchMovies(movie);
+})
+
+function displayMovies(movies){
+    moviesContainer.innerHTML="";
+    movies.forEach(movie=>{
+      moviesContainer.innerHTML+=
+      `
+      <div class="movie-card">
+      <img src="${movie.Poster}"/>
+      <h3>${movie.Title}</h3>
+      <p>${movie.Year}</p>
+
+      `
+    })
+}
