@@ -7,7 +7,8 @@ const loader=document.getElementById("loader");
 
 
 async function searchMovies(movieName){
-    loader.style.display = "flex";
+    // loader.style.display = "flex";
+    loader.style.display = "block";
     const response=await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${movieName}`);
     console.log(response);
     const data=await response.json();
