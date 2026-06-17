@@ -39,3 +39,11 @@ function displayMovies(movies){
       `
     })
 }
+
+searchInput.addEventListener("keypress",(event)=>{
+
+if(event.key==="Enter"){
+    searchMovies(searchInput.value);
+}
+})
+
